@@ -4,7 +4,10 @@
   "description": "Video and text chat with peerjs",
   "main": "index.js",
   "dependencies": {
-    "peer": "^0.5.3"
+    "peer": "^0.5.3",
+    "express": "^4.17.1",
+     "http": "0.0.1-security",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
