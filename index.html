@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Video Chat with PeerJS</title>
+     <script src="eruda.min.js"></script>
+</head>
+
+<body>
+    <video id="my-camera" autoplay="autoplay" muted="true"></video>
+    <video id="peer-camera" autoplay="autoplay"></video>
+    <div id="opt">
+      <center>
+          Your id: <span id="peer-id-label"></span><br />
+          <input type="text" name="name" id="name" placeholder="Your name">
+          <input type="text" name="peer_id" id="peer_id" placeholder="Peer ID" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><br />
+          <button id="connect-to-peer-btn" >Connect</button>
+      </center>
+    </div>
+    <div class="bot">
+      <center>
+          <input type="text" id="message" value="" />
+          <button id="send-message">send</button>
+          <button id="call">call</button>
+      </center>
+    </div>
+    <script>
+      eruda.init();
+    </script>
+    <style type="text/css">
+    body{
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+      #peer-camera{
+        background: #ff67aa;
+        object-fit: center;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+      }
+      #my-camera{
+        background: #67aaff;
+        object-fit: center;
+        height: 120px;
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
+        right: 0;
+        width: 100px;
+      }
+      #opt{
+        z-index: 100;
+        background: #00ff66;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #name,#peer_id{
+        height: 22px;
+        width: 90px;
+      }
+      .bot{
+        position: absolute;
+        z-index: 100;
+        border-radius: 8px;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 80%;
+        height: 35px;
+        left: 50%;
+        display: flex;
+        background: #4fff46;
+      }
+      .bot input{
+        height: 100%;
+        border: 0;
+        outline: none;
+        background: #71cce2;
+        padding-left: 16px;
+        box-shadow: inset 0px 0px 2px 4px #85a5ad;
+      }
+      .bot button{
+        outline: none;
+        border: 0;
+        color: #7a800a;
+        height: 100%;
+        width: 40px;
+        box-shadow: inset 0px 0px 2px 4px #ae49ec;
+      }
+    </style>
+     <script src="peer.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

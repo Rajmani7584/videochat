@@ -1,0 +1,15 @@
+{
+  "name": "duo",
+  "version": "1.0.0",
+  "description": "Video and text chat with peerjs",
+  "main": "index.js",
+  "dependencies": {
+    "peer": "^0.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rajmani",
+  "license": "ISC"
+}
