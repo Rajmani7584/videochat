@@ -19,6 +19,9 @@
           <button id="connect-to-peer-btn" >Connect</button>
       </center>
     </div>
+    <div id="messages">
+      
+    </div>
     <div class="bot">
       <center>
           <input type="text" id="message" value="" />
@@ -34,6 +37,15 @@
       margin: 0;
       padding: 0;
       display: flex;
+    }
+    #messages{
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      width: 120px;
+      color: red;
+      opacity: 0.4;
     }
       #peer-camera{
         background: #ff67aa;
