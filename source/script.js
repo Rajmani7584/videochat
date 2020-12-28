@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
         // Request audio an video
-        navigator.getUserMedia({ audio: false, video: true }, callbacks.success , callbacks.error);
+        navigator.getUserMedia({ audio: true, video: true }, callbacks.success , callbacks.error);
     }
 
     function onReceiveStream(stream, element_id) {
@@ -53,17 +53,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var orientation = "text-left";
 
         if(data.from == username){
-            orientation = "text-right"
-        }
+           var messageHTML = '<h4 class="list-group-item-heading">'+ data.from +'</h4>';
+            messageHTML += '<p class="list-group-item-text">'+ data.text +'</p>';
 
-        var messageHTML =  '<a href="javascript:void(0);" class="list-group-item' + orientation + '">';
-                messageHTML += '<h4 class="list-group-item-heading">'+ data.from +'</h4>';
-                messageHTML += '<p class="list-group-item-text">'+ data.text +'</p>';
-            messageHTML += '</a>';
-
-        document.getElementById("messages").innerHTML += messageHTML;
+            document.getElementById("messages").innerHTML += messageHTML;
     }
-
+}
     document.getElementById("send-message").addEventListener("click", function(){
         var text = document.getElementById("message").value;
 
@@ -110,8 +105,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             return false;
         }
 
-        document.getElementById("chat").className = "";
-        document.getElementById("connection-form").className += " hidden";
     }, false);
     requestLocalVideo({
         success: function(stream){
